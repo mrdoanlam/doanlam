@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lâm</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@300;400&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,132 +13,62 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-color: #000000;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow: hidden;
+            font-family: 'Lora', serif;
         }
 
-        /* Animated background particles */
-        .particles {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            overflow: hidden;
-            z-index: 1;
+        a {
+            text-decoration: none;
+            color: inherit;
         }
 
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.5);
-            border-radius: 50%;
-            animation: float 20s infinite;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0) translateX(0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-100vh) translateX(100px);
-                opacity: 0;
-            }
-        }
-
-        .container {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            padding: 20px;
+        a:hover h1 {
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
         }
 
         h1 {
-            font-size: 3.5rem;
+            font-size: 6rem;
             color: white;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-            animation: fadeInDown 1s ease-out;
-            line-height: 1.2;
+            font-weight: 300;
+            letter-spacing: 9px;
+            text-align: center;
+            line-height: 1;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
         }
 
-        .highlight {
-            color: #ffd700;
-            display: inline-block;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+        /* Tablet (768px - 1024px) */
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 5rem;
             }
         }
 
-        @keyframes pulse {
-            0%, 100% {
-                text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-            }
-            50% {
-                text-shadow: 0px 0px 20px rgba(255, 215, 0, 0.8);
+        /* Mobile (480px - 767px) */
+        @media (max-width: 767px) {
+            h1 {
+                font-size: 3.5rem;
+                letter-spacing: 6px;
             }
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
+        /* Small mobile (< 480px) */
+        @media (max-width: 479px) {
             h1 {
                 font-size: 2.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.8rem;
+                letter-spacing: 4px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="particles" id="particles"></div>
-    
-    <div class="container">
-        <h1>
-            My name is <span class="highlight">LÂM</span>
-        </h1>
-    </div>
-
-    <script>
-        // Create animated particles
-        const particlesContainer = document.getElementById('particles');
-        const particleCount = 50;
-
-        for (let i = 0; i < particleCount; i++) {
-            const particle = document.createElement('div');
-            particle.classList.add('particle');
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.top = Math.random() * 100 + '%';
-            particle.style.animationDelay = Math.random() * 20 + 's';
-            particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
-            particlesContainer.appendChild(particle);
-        }
-    </script>
+    <a href="https://www.facebook.com/mrdoanlam" target="_blank">
+        <h1>LÂM</h1>
+    </a>
 </body>
 </html>
